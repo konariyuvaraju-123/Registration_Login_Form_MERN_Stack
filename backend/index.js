@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/practice_mern');
+mongoose.connect('mongodb://127.0.0.1:27017/student');
 
 app.post('/register', (req, res)=>{
     // To post / insert data into database
@@ -22,7 +22,7 @@ app.post('/register', (req, res)=>{
         }
         else{
             FormDataModel.create(req.body)
-            .then(log_reg_form => res.json(log_reg_form))
+            .then(details => res.json(details))
             .catch(err => res.json(err))
         }
     })
