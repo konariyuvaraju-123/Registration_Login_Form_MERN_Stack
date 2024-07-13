@@ -18,6 +18,7 @@ app.post('/register', (req, res)=>{
     .then(user => {
         if(user){
             res.json("Already registered")
+            console.log("success")  
         }
         else{
             FormDataModel.create(req.body)
